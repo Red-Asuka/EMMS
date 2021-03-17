@@ -10,6 +10,18 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "prettier --config .prettierrc --write",
+      "eslint",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "balm-ui": "^8.18.0",
@@ -25,6 +37,8 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.5.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "husky": "^5.1.3",
+    "lint-staged": "^10.5.4"
   }
 }
