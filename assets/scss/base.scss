@@ -1,0 +1,25 @@
+@import './bulma.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+body {
+  font-family: 'Roboto', system, -apple-system, BlinkMacSystemFont,
+    'PingFang SC', 'Segoe UI', 'Microsoft YaHei', 'wenquanyi micro hei',
+    'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #5e5e5e;
+  font-size: 14px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.block {
+  padding: 70px 0;
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
