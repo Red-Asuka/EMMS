@@ -5,7 +5,7 @@ const mysql = require('mysql')
 const pool = mysql.createPool(dbConfig.dbs)
 
 // query sql语句入口
-const query = (sql, val) => {
+export const query = (sql, val) => {
   return new Promise((resolve, reject) => {
     pool.getConnection(function (err, connection) {
       if (err) {
@@ -19,8 +19,4 @@ const query = (sql, val) => {
       }
     })
   })
-}
-
-module.exports = {
-  query,
 }
