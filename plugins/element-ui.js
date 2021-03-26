@@ -1,19 +1,7 @@
 import Vue from 'vue'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import {
-  Form,
-  FormItem,
-  Input,
-  Button,
-  Row,
-  Col,
-  Select,
-  Option,
-  Checkbox,
-  Message,
-  Alert,
-} from 'element-ui'
+import { Form, FormItem, Input, Button, Row, Col, Select, Option, Checkbox, Message, Alert } from 'element-ui'
 
 Vue.use(Form)
 Vue.use(FormItem)

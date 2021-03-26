@@ -10,16 +10,14 @@ const CREATE_TABLE = `CREATE TABLE IF NOT EXISTS user(
 const QUERY_TABLE = (tableName) => `SELECT * FROM ${tableName}`
 
 // 插入数据
-const INSERT_TABLE = (tableName, { key, val }) =>
-  `INSERT INTO ${tableName}(${key}) VALUES (${val})`
+const INSERT_TABLE = (tableName, { key, val }) => `INSERT INTO ${tableName}(${key}) VALUES (${val})`
 
 // 更新数据
 const UPDATE_TABLE = (tableName, { primaryKey, primaryVal }, { key, value }) =>
   `UPDATE ${tableName} SET ${key}=${value} WHERE(${primaryKey}=${primaryVal});`
 
 // 删除数据
-const DELETE_TABLE = (tableName, { primaryKey, primaryVal }) =>
-  `DELETE FROM user WHERE(${primaryKey}=${primaryVal});`
+const DELETE_TABLE = (tableName, { primaryKey, primaryVal }) => `DELETE FROM user WHERE(${primaryKey}=${primaryVal});`
 
 module.exports = {
   CREATE_TABLE,

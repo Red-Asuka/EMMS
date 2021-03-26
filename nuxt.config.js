@@ -1,8 +1,5 @@
 export default {
   target: 'server',
-  server: {
-    host: '0.0.0.0', // default: localhost
-  },
   telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -26,7 +23,10 @@ export default {
   css: ['@/assets/scss/base.scss', '@/assets/scss/element-reset.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '@/plugins/element-ui', ssr: true }],
+  plugins: [
+    { src: '@/plugins/element-ui', ssr: true },
+    { src: '@/plugins/route', ssr: true },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

@@ -1,11 +1,12 @@
 @import './bulma.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import './variable.scss';
+@import './mixins.scss';
 
 body {
-  font-family: 'Roboto', system, -apple-system, BlinkMacSystemFont,
-    'PingFang SC', 'Segoe UI', 'Microsoft YaHei', 'wenquanyi micro hei',
-    'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Oxygen', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', system, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', 'Microsoft YaHei',
+    'wenquanyi micro hei', 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #5e5e5e;
   font-size: 14px;
   word-spacing: 1px;
@@ -17,9 +18,109 @@ body {
   height: 100%;
 }
 
-.block {
-  padding: 70px 0;
-  &:not(:last-child) {
-    margin-bottom: 0;
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+}
+
+body {
+  font-family: system, -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Segoe UI', 'Microsoft YaHei',
+    'wenquanyi micro hei', 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: $font-size--body;
+  color: var(--color-text-default);
+  background-color: var(--color-bg-primary);
+  letter-spacing: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1 {
+  color: var(--color-bg-normal);
+  font-size: $font-size--subtitle;
+}
+
+h2 {
+  color: var(--color-bg-normal);
+  font-size: $font-size--title;
+}
+
+a {
+  color: var(--color-text-green);
+  &:hover {
+    color: var(--color-text-green-hover);
+  }
+}
+
+.column {
+  min-height: 100vh;
+}
+
+#banner {
+  text-align: center;
+  position: relative;
+  background: url(~assets/images/banner.png) no-repeat center/cover;
+  > div {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    margin: 0 12px;
+  }
+}
+
+#auth-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > div {
+    width: 580px;
+    padding: 40px;
+    h2 {
+      margin-bottom: 40px;
+    }
+    .back-prv {
+      float: right;
+      font-size: $font-size--body;
+      line-height: 36px;
+    }
+    .tip-bar {
+      margin-bottom: 24px;
+      .forgot-passwd {
+        color: var(--color-text-gray);
+        &:hover {
+          color: var(--color-text-gray-hover);
+        }
+      }
+      .signup {
+        float: right;
+      }
+    }
+    .btn-signup {
+      margin-bottom: 16px;
+    }
+    .check-email {
+      margin-bottom: 16px;
+      text-align: center;
+      p {
+        font-size: $font-size--subtitle;
+        margin-bottom: 16px;
+      }
+    }
+    .input-code {
+      > input::placeholder {
+        color: var(--color-text-default);
+      }
+      .el-input-group__append {
+        border: none;
+        background-color: transparent;
+        .btn-code {
+          width: 110px;
+          border-radius: 4px;
+        }
+      }
+    }
   }
 }
