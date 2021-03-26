@@ -1,7 +1,9 @@
 export default {
+  target: 'server',
   server: {
     host: '0.0.0.0', // default: localhost
   },
+  telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '环境监测系统',
@@ -52,6 +54,19 @@ export default {
         },
       },
     },
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.Client) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/,
+        })
+      }
+    },
+    // https://github.com/nuxt/nuxt.js/issues/3804
+    cache: false,
   },
 
   // Axios Configuration (https://axios.nuxtjs.org/options/)
@@ -61,8 +76,8 @@ export default {
     credentials: true,
   },
   proxy: {
-    '/api': {
-      target: 'http://127.0.0.1:5005',
+    '/api/cloud': {
+      target: 'https://tce123e3.cn.emqx.cloud:8443',
       pathRewrite: {
         changeOrigin: true,
       },

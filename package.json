@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -25,9 +25,21 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/bulma": "^1.3.0",
+    "axios": "^0.21.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "core-js": "^3.8.3",
+    "cross-env": "^5.2.0",
+    "crypto-js": "^4.0.0",
     "element-ui": "^2.14.1",
-    "nuxt": "^2.14.12"
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.3.0",
+    "koa-cors": "0.0.16",
+    "koa-json": "^2.0.2",
+    "koa-router": "^8.0.8",
+    "lodash": "^4.17.15",
+    "mysql": "^2.18.1",
+    "nuxt": "^2.15.3"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
