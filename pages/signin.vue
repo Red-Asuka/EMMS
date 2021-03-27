@@ -23,6 +23,9 @@
 export default {
   name: 'Index',
   layout: 'signinLayout',
+  head: {
+    title: '登录',
+  },
   data() {
     return {
       user: {
@@ -70,4 +73,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.el-button {
+  width: 100%;
+}
+.column {
+  min-height: 100vh;
+}
+</style>

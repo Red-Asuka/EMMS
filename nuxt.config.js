@@ -3,7 +3,8 @@ export default {
   telemetry: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '环境监测系统',
+    title: '基于 EMQ 的环境监测系统',
+    titleTemplate: '%s | 基于 EMQ 的环境监测系统',
     htmlAttrs: {
       lang: 'zh-CN',
     },
@@ -26,6 +27,7 @@ export default {
   plugins: [
     { src: '@/plugins/element-ui', ssr: true },
     { src: '@/plugins/route', ssr: true },
+    { src: '~/plugins/chart.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

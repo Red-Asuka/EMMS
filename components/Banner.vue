@@ -6,3 +6,9 @@
     </div>
   </section>
 </template>
+
+<style lang="scss" scoped>
+.column {
+  min-height: 100vh;
+}
+</style>
